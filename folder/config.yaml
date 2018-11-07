@@ -1,0 +1,23 @@
+
+## the index folder for STAR, change to mm9 if it is mouse
+STARINDEX: "/home/exx/Documents/RNAseq/hg19/"
+## gtf file for annotation
+
+MYGTF: "/home/exx/Documents/RNAseq/hg19_gtf/hg19.gtf"
+
+
+## start from bam or start from fastq
+from_fastq: True
+
+## use which program to count 
+htseq: False
+featureCount : True
+
+# Path to a JSON file with samples and their corresponding FASTQ files.
+SAMPLES_JSON: './samples.json'
+
+CLUSTER_JSON: './cluster.json'
+
+untreated: 'untreated'
+
+treated: 'treated'
