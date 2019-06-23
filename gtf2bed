@@ -1,0 +1,64 @@
+
+
+grep "chr1" hg38.gtf > 1.hg38.gtf 
+gtfToGenePred  1.hg38.gtf 1.hg38.GenePred
+genePredToBed  1.hg38.GenePred  1.hg38.bed
+
+grep "chr2" hg38.gtf > 2.hg38.gtf 
+gtfToGenePred  2.hg38.gtf 2.hg38.GenePred
+genePredToBed  2.hg38.GenePred  2.hg38.bed
+
+
+grep "chr3" hg38.gtf > 3.hg38.gtf 
+gtfToGenePred  3.hg38.gtf 3.hg38.GenePred
+genePredToBed  3.hg38.GenePred  3.hg38.bed
+
+
+grep "chr4" hg38.gtf > 4.hg38.gtf 
+gtfToGenePred  4.hg38.gtf 4.hg38.GenePred
+genePredToBed  4.hg38.GenePred  4.hg38.bed
+
+
+
+grep "chr5" hg38.gtf > 5.hg38.gtf 
+gtfToGenePred  5.hg38.gtf 5.hg38.GenePred
+genePredToBed  5.hg38.GenePred  5.hg38.bed
+
+
+
+grep "chr6" hg38.gtf > 6.hg38.gtf 
+gtfToGenePred  6.hg38.gtf 6.hg38.GenePred
+genePredToBed  6.hg38.GenePred  6.hg38.bed
+
+
+
+grep "chr7" hg38.gtf > 7.hg38.gtf 
+gtfToGenePred  7.hg38.gtf 7.hg38.GenePred
+genePredToBed  7.hg38.GenePred  7.hg38.bed
+
+grep "chr8" hg38.gtf > 8.hg38.gtf 
+gtfToGenePred  8.hg38.gtf 8.hg38.GenePred
+genePredToBed  8.hg38.GenePred  8.hg38.bed
+
+
+grep "chr9" hg38.gtf > 9.hg38.gtf 
+gtfToGenePred  9.hg38.gtf 9.hg38.GenePred
+genePredToBed  9.hg38.GenePred  9.hg38.bed
+
+
+grep "chrM" hg38.gtf > M.hg38.gtf 
+gtfToGenePred  M.hg38.gtf M.hg38.GenePred
+genePredToBed  M.hg38.GenePred  M.hg38.bed
+
+
+grep "chrX" hg38.gtf > X.hg38.gtf 
+gtfToGenePred  X.hg38.gtf X.hg38.GenePred
+genePredToBed  X.hg38.GenePred  X.hg38.bed
+
+
+grep "chrY" hg38.gtf > Y.hg38.gtf 
+gtfToGenePred  Y.hg38.gtf Y.hg38.GenePred
+genePredToBed  Y.hg38.GenePred  Y.hg38.bed
+
+
+cat 1.hg38.bed 2.hg38.bed 3.hg38.bed 4.hg38.bed 5.hg38.bed 6.hg38.bed 7.hg38.bed 8.hg38.bed 9.hg38.bed X.hg38.bed  Y.hg38.bed  M.hg38.bed  > hg38.bed
