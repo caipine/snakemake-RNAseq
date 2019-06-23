@@ -1,0 +1,40 @@
+# path or URL to sample sheet (TSV format, columns: sample, condition, ...)
+samples: samples.csv
+# path or URL to sequencing unit sheet (TSV format, columns: sample, unit, fq1, fq2, 
+# strandedness). Units are technical replicates (e.g. lanes, or resequencing of the 
+# same biological sample).If the column "strandedness" is present (which is optional), 
+# can be empty or has one of these values: none, yes or reverse. none is for unstranded 
+# protocols, yes an reverse follow the nomenclature used in `htseq-count --reverse` 
+# which is referenced in STAR manual section 7, "Counting number of reads per gene".
+
+units: units.csv
+
+trimming:
+  # skip trimming: false or true
+  skip: false
+  # the sequencing adapter
+  adapter: ACGGATCGATCGATCGATCGAT
+
+ref:
+  # the STAR index
+  index: "/scratch/03988/qscai/RNAseq/MA-MCL_RNA578/rna-seq-star-deseq2-1.0.0/ht38/"
+  # gtf file with transcripts
+  annotation: "/scratch/03988/qscai/RNAseq/MA-MCL_RNA578/rna-seq-star-deseq2-1.0.0/ht38/hg38.gtf"
+  bed: "/scratch/03988/qscai/RNAseq/MA-MCL_RNA578/rna-seq-star-deseq2-1.0.0/ht38/annotion.bed"
+
+pca:
+  labels:
+    # columns of sample sheet to use for PCA
+    - condition
+
+diffexp:
+  # contrasts for the deseq2 results method
+  contrasts:
+    Resistent-vs-Sensetive:
+      - Resistent
+      - Sensetive
+
+params:
+  star: ""
+  cutadapt-se: ""
+  cutadapt-pe: ""
