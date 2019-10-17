@@ -1,0 +1,6 @@
+conda install -c bioconda -c conda-forge snakemake
+
+conda install -c bioconda star=2.7.0f
+conda install -c bioconda star-fusion
+conda install -c bioconda samtools
+conda install -c bioconda varscan
