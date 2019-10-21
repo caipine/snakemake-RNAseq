@@ -1,6 +1,28 @@
+./Miniconda3-latest-Linux-x86_64.sh
 conda install -c bioconda -c conda-forge snakemake
+
+
 
 conda install -c bioconda star=2.7.0f
 conda install -c bioconda star-fusion
 conda install -c bioconda samtools
 conda install -c bioconda varscan
+conda install -c bioconda picard 
+conda install -c bioconda rseqc
+conda install -c conda-forge cufflinks-py
+
+python3.7 modules/rseqc/bin/read_distribution.py --input-file=analysis/STAR/SAMPLE1/SAMPLE1.sorted.bam --refgene=./ref_files/hg38/hg38.refseqGenes.bed 1>analysis/RSeQC/read_distrib/SAMPLE1.txt
+
+
+transvar config --download_anno --refversion hg19
+transvar config --download_ref --refversion hg19
+transvar config -k reference -v /data/exx/bio-inform-wang/ht38_rnaseq_star2.7.0f/ucsc.hg19.fasta --refversion hg19
+transvar panno -i 'PIK3CA:p.E545K' --ucsc --ccds
+
+
+
+
+ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.annotation.gtf.gz
+
+cd /usr/lib64/python2.7/site-packages/TransVar-2.0-py2.7-linux-x86_64.egg/transvar/transvar.download
+transvar panno -i 'TP53:p.C106W'  --ensembl  --ccds --refseq
