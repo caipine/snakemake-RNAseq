@@ -1,0 +1,12 @@
+conda env create -f environment1.yml -n viper
+conda env update -f environment2.yml -n viper
+conda env update -f environment3.yml -n viper
+conda env create -f python2_environment.yml -n viper_py2
+conda activate viper
+
+conda install -c bioconda cufflinks=2.2.1
+conda install -c bioconda picard
+conda install -c bioconda ucsc-fetchchromsizes
+conda install -c bioconda varscan 
+conda install -c bioconda bedtools 
+conda install -c r r-ggplot2 
